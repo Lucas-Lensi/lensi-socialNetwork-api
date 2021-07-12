@@ -7,6 +7,8 @@ const compression = require("compression");
 
 const cors = require("cors");
 
+require('dotenv').config();
+
 const VAR_ENV = require("./api/config.js");
 
 // Imporing routes Files
@@ -120,5 +122,5 @@ app.get("*", function (req, res) {
 // } else {
 //     app.listen(process.env.PORT || 3000);
 // }
-
-app.listen(process.env.PORT || 3000);
+console.log('Server listening in port ' + process.env.PORT)
+app.listen(process.env.PORT);
