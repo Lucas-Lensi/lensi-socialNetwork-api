@@ -12,6 +12,7 @@ const VAR_ENV = require("./api/config.js");
 // Imporing routes Files
 const userRoutes = require('./api/Routes/user.routes');
 const postRoutes = require('./api/Routes/post.routes');
+const conversationRoutes = require('./api/Routes/conversation.routes');
 const errorRoutes = require('./api/Routes/error.routes');
 
 var app = express();
@@ -105,6 +106,7 @@ const corsOptions = {
 // Cors required
 app.use('/users', cors(), userRoutes);
 app.use('/posts', cors(), postRoutes);
+app.use('/conversations', cors(), conversationRoutes);
 app.use('/errors', cors(), errorRoutes);
 
 app.get("*", function (req, res) {

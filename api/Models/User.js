@@ -23,6 +23,10 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
+    conversations: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Conversation'
+    }]
 });
 
 module.exports = mongoose.model("User", UserSchema);
